@@ -1,6 +1,7 @@
 #!/usr/bin/python2
 # -*-coding:utf-8-*-
 
+
 class TrieNode:
     def __init__(self, char):
         self.char = char
@@ -23,7 +24,9 @@ class TrieNode:
         self.frequency += cnt
 
     def inc_end_cnt(self, cnt=1):
-        self.end_cnt += 1
+        self.end_cnt += cnt
+
+
 class Trie:
 
     def __init__(self):
