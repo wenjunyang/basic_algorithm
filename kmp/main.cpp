@@ -63,7 +63,7 @@ int kmp(const char* src, const char* pattern, int* result) {
             if (pat_len - 1 == pat_idx) {
                 result[match_len++] = src_idx - pat_idx;
                 if (pat_idx > 0) {
-                    pat_idx = pat_next[pat_idx - 1];
+                    pat_idx = pat_next[pat_idx];
                 }
                 src_idx += 1;
             } else {
@@ -83,14 +83,21 @@ int kmp(const char* src, const char* pattern, int* result) {
 
 }
 
-int main() {
-    char* src = "aaaaaaaaaa";
-    char* pattern = "aa";
+void test(const char* src, const char* pattern) {
     int* result = new int[strlen(src)];
     int len = kmp(src, pattern, result);
+    cout << "src:" << src << ",pat:" << pattern << ",result:";
     for (int i = 0; i < len; i++) {
-        cout << i << ",";
+        cout << result[i] << ",";
     }
+    cout << endl;
     delete result;
+}
+
+int main() {
+    test("aaaaaaa", "a");
+    test("aaaaaaaa", "aa");
+    test("abababccccababav", "aba");
+    test("abababccccababav", "av");
     return 0;
 }
