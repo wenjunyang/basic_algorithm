@@ -91,3 +91,6 @@ ENV/
 #pycharm
 .idea/
 *.iml
+
+#clion
+cmake-build-debug/
