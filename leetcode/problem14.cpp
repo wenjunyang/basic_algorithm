@@ -30,11 +30,3 @@ public:
         return strs[0].substr(0, i);
     }
 };
-
-int main() {
-    Solution s;
-    vector<string> strs(0);
-    strs.push_back("a");
-    strs.push_back("b");
-    cout << s.longestCommonPrefix(strs);
-}
