@@ -53,10 +53,3 @@ vector<int> fromArray(int arr[], int len) {
     }
     return result;
 }
-int main() {
-    int arr[] = {-10,-4,5,0,1,1,-8,3,-10,3,0,-6,-10,4,-9,-1,-10,6,-6,-2,3,2};
-    vector<int> nums = fromArray(arr, sizeof(arr) / sizeof(arr[0]));
-    Solution s;
-    vector<vector<int>> result = s.threeSum(nums);
-    return 0;
-}
